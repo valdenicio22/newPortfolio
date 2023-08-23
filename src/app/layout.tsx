@@ -5,22 +5,22 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: 'My personal portfolio',
+  description: 'My personal portfolio'
 }
 
 const inter = Inter({
   variable: '--font-inter',
-  subsets: ['latin'],
+  subsets: ['latin']
 })
 
 const plexMono = IBM_Plex_Mono({
   variable: '--font-plex-mono',
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500']
 })
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
