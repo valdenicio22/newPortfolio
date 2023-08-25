@@ -1,4 +1,4 @@
-import { Header } from '@/components/Header'
+import { Header } from '@/components/header'
 import type { Metadata } from 'next'
 import { IBM_Plex_Mono, Inter } from 'next/font/google'
 import './globals.css'
@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} ${plexMono.className}`}>
+    <html lang="pt-BR" className={`${inter.className}`}>
+      <body>
         <Header />
         {children}
       </body>
