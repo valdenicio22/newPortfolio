@@ -1,6 +1,12 @@
 import { TbBrandGithub, TbBrandLinkedin } from 'react-icons/tb'
 
-export const technologies = ['NextJs', 'Reactjs', 'TypeScript', 'Redux', 'Tailwind']
+export const technologies = [
+  'NextJs',
+  'Reactjs',
+  'TypeScript',
+  'Redux',
+  'Tailwind'
+]
 
 export const socialMediaContacts = [
   {

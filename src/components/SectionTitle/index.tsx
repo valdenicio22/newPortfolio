@@ -1,4 +1,4 @@
-import { cn } from "@/utils/utils"
+import { cn } from '@/utils/utils'
 
 interface SectionTitleProps {
   section: string
@@ -9,8 +9,8 @@ interface SectionTitleProps {
 export function SectionTitle({ section, title, className }: SectionTitleProps) {
   return (
     <div className={cn('flex flex-col gap-4', className)}>
-      <span className='font-mono text-sm text-emerald-400'>{`../${section}`}</span>
-      <h2 className='font-medium text-3xl'>{title}</h2>
+      <span className="font-mono text-sm text-emerald-400">{`../${section}`}</span>
+      <h2 className="font-medium text-3xl">{title}</h2>
     </div>
   )
 }

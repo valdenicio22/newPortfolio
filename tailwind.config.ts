@@ -17,12 +17,12 @@ const config: Config = {
       fontFamily: {
         mono: ['var(--font-plex-mono)', 'monospace']
       },
-      colors:{
+      colors: {
         'tags-bg': '#0C3436'
-      }, 
-      boxShadow: {
-        button: '0px 0px 68px 7px rgba(5, 150, 105, 0.4)',
       },
+      boxShadow: {
+        button: '0px 0px 68px 7px rgba(5, 150, 105, 0.4)'
+      }
     }
   },
   plugins: []

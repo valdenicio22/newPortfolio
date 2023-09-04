@@ -13,7 +13,10 @@ export function NavItem({ href, label }: NavItemProps) {
   return (
     <Link
       href={href}
-      className={cn(`flex items-center gap-2 text-gray-400 font-mono font-medium text-sm`, isActive && 'text-gray-50')}
+      className={cn(
+        `flex items-center gap-2 text-gray-400 font-mono font-medium text-sm`,
+        isActive && 'text-gray-50'
+      )}
     >
       <span className={`text-emerald-400`}>#</span>
       {label}

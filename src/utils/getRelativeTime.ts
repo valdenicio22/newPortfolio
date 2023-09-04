@@ -1,4 +1,3 @@
-
 /**
  * Convert a date to a relative time string, such as
  * "a minute ago", "in 2 hours", "yesterday", "3 months ago", etc.
@@ -6,7 +5,7 @@
  */
 export function getRelativeTimeString(
   date: Date | number,
-  lang = navigator.language,
+  lang = navigator.language
 ): string {
   // Allow dates or times to be passed
   const timeMs = typeof date === 'number' ? date : date.getTime()
@@ -22,7 +21,7 @@ export function getRelativeTimeString(
     86400 * 7,
     86400 * 30,
     86400 * 365,
-    Infinity,
+    Infinity
   ]
 
   // Array equivalent to the above but in the string representation of the units
@@ -33,12 +32,12 @@ export function getRelativeTimeString(
     'day',
     'week',
     'month',
-    'year',
+    'year'
   ]
 
   // Grab the ideal cutoff unit
   const unitIndex = cutoffs.findIndex(
-    (cutoff) => cutoff > Math.abs(deltaSeconds),
+    (cutoff) => cutoff > Math.abs(deltaSeconds)
   )
 
   // Get the divisor to divide from the seconds. E.g. if our unit is "day" our divisor
