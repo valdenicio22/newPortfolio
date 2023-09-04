@@ -15,7 +15,7 @@ export function ProjectCard({ description, img, name, techs }: ProjectProps) {
     <div className="flex flex-col items-center gap-6 lg:gap-12 lg:flex-row">
       <div className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full">
         <Image
-          src="/images/profile-pic.png"
+          src="/images/projects/book-wise.png"
           width={420}
           height={304}
           alt="My profile picture"
