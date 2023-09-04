@@ -11,7 +11,7 @@ export function Experience() {
 
         <KnowledgeBox key={i} tech={{
           name: 'NextJs',
-          icon: <TbBrandNextjs />,
+          icon: <TbBrandNextjs size={24} />,
           startDate: '2022-01-01'
         }} />
 
