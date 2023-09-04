@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/button'
 import { TechBadge } from '@/components/techBadge'
 import { socialMediaContacts, technologies } from '@/constants'
@@ -5,6 +7,12 @@ import Image from 'next/image'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 
 export function HeroSection() {
+  const handleContact = () => {
+    const contactSection = document.querySelector('#contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return (
     <section
       className="w-full lg:h-[755px] flex flex-col justify-end  bg-hero-image bg-cover bg-no-repeat bg-center 
@@ -32,7 +40,7 @@ export function HeroSection() {
           </div>
 
           <div className="mt-6 lg:mt-10 flex items-center gap-4">
-            <Button className="w-max shadow-button">
+            <Button className="w-max shadow-button" onClick={handleContact}>
               Entre em contato
               <HiArrowNarrowRight size={18} />
             </Button>

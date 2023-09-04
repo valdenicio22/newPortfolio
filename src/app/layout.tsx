@@ -1,3 +1,4 @@
+import { BackToTop } from '@/components/BackToTop'
 import { ContactForm } from '@/components/ContactForm'
 import { Footer } from '@/components/Foorter'
 import { Header } from '@/components/header'
@@ -29,6 +30,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.className}`}>
       <body>
+        <BackToTop />
+
         <Header />
         {children}
         <ContactForm />
