@@ -1,3 +1,5 @@
+import { ContactForm } from '@/components/ContactForm'
+import { Footer } from '@/components/Foorter'
 import { Header } from '@/components/header'
 import type { Metadata } from 'next'
 import { IBM_Plex_Mono, Inter } from 'next/font/google'
@@ -29,6 +31,8 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <ContactForm />
+        <Footer />
       </body>
     </html>
   )
