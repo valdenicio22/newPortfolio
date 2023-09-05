@@ -1,12 +1,26 @@
 'use client'
 
+import { HomePageInfo } from '@/Types/home'
+import { CMSIcon } from '@/components/CMSIcon'
+import { RichText } from '@/components/RichText'
 import { Button } from '@/components/button'
 import { TechBadge } from '@/components/techBadge'
-import { socialMediaContacts, technologies } from '@/constants'
 import Image from 'next/image'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 
-export function HeroSection() {
+type HeroSectionProps = {
+  homeInfo: HomePageInfo
+}
+
+export function HeroSection({ homeInfo }: HeroSectionProps) {
+  console.log('homeInfo', homeInfo)
+  const {
+    introduction,
+    knownTechs,
+    profilePicture,
+    socialMedias,
+    technologies
+  } = homeInfo
   const handleContact = () => {
     const contactSection = document.querySelector('#contact')
     if (contactSection) {
@@ -24,18 +38,13 @@ export function HeroSection() {
           <p className="text-emerald-400 font-mono">Olá meu nome é</p>
           <h2 className="text-4xl font-medium mt-2">Valdenício Ferreira</h2>
 
-          <p className="text-gray-400 my-6 text-sm sm:text-base">
-            Olá, meu nome é Valdenício Ferreira e sou um desenvolvedor front-end
-            apaixonado por tecnologia. Com mais de{' '}
-            <strong className="font-medium">1 anos de experiência</strong>. Meu
-            objetivo é criar interfaces de usuário bonitas e funcionais, além de
-            liderar equipes técnicas em projetos desafiadores. Estou sempre
-            aberto a novas oportunidades e desafios.
-          </p>
+          <div className="text-gray-400 my-6 text-sm sm:text-base">
+            <RichText content={introduction.raw} />
+          </div>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {technologies.map((tech, i) => (
-              <TechBadge key={`${tech}-${i}`} name={tech} />
+              <TechBadge key={`${tech.name}-${i}`} name={tech.name} />
             ))}
           </div>
 
@@ -45,14 +54,14 @@ export function HeroSection() {
               <HiArrowNarrowRight size={18} />
             </Button>
             <div className="h-20 flex items-center gap-3 text-2xl text-gray-600 ">
-              {socialMediaContacts.map((item, i) => (
+              {socialMedias.map((social, i) => (
                 <a
-                  href={item.url}
-                  key={i + 1}
+                  href={social.url}
+                  key={`${social.url}-${i}`}
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
                 >
-                  {item.icon}
+                  <CMSIcon icon={social.iconSvg} />
                 </a>
               ))}
             </div>
@@ -60,7 +69,7 @@ export function HeroSection() {
         </div>
 
         <Image
-          src="/images/profile-pic.png"
+          src={profilePicture.url}
           width={420}
           height={404}
           alt="My profile picture"
