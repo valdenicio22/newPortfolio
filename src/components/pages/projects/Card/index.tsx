@@ -1,6 +1,14 @@
+import { Project } from '@/Types/projects'
 import Image from 'next/image'
 
-export function Card() {
+type CardProps = {
+  project: Project
+}
+
+export function Card({ project }: CardProps) {
+  const { shortDescription, thumbnail, technologies, title } = project
+  const techonologiesAsString = technologies.map((tech) => tech.name).join(', ')
+
   return (
     <div
       className="h-[436px] rounded-lg flex flex-col bg-gray-800 overflow-hidden border-2
@@ -8,27 +16,22 @@ export function Card() {
     >
       <div className="w-full h-48 overflow-hidden">
         <Image
-          src="/images/projects/book-wise.png"
+          src={thumbnail.url}
           width={380}
           height={200}
           unoptimized
-          alt="Thumbnail of the Project picture"
+          alt={`Thumbnail of the ${title} project`}
           className=" w-full h-full object-cover group-hover:scale-110 duration-500 transition-all"
         />
       </div>
 
       <div className="flex-1 flex flex-col p-8">
         <strong className="font-medium text-gray-50/90 group-hover:text-emerald-500 transition-all">
-          BookWise
+          {title}
         </strong>
-        <p className="mt-2 text-gray-400 line-clamp-4">
-          BookWise é uma pllataforma de avaliação de livro que foi desenvolvida
-          durante o bootcamp Ignite da RocketSeat. BookWise é uma pllataforma de
-          avaliação de livro que foi desenvolvida durante o bootcamp Ignite da
-          RocketSeat
-        </p>
+        <p className="mt-2 text-gray-400 line-clamp-4">{shortDescription}</p>
         <span className="block text-gray-300 text-sm font-medium mt-auto truncate">
-          Nextj.js, Next Auth Stiches, Radix, Typescript, Prisma, React Query
+          {techonologiesAsString}
         </span>
       </div>
     </div>
