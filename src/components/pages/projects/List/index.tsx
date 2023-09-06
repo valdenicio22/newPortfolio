@@ -1,4 +1,7 @@
+'use client'
 import { ProjectsPageData } from '@/Types/home'
+import { fadeUpAnimation } from '@/lib/animation'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Card } from '../Card'
 
@@ -10,9 +13,15 @@ export function List({ projects }: ListProps) {
   return (
     <section className="container py-32 grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-x-4 gap-y-6">
       {projects.map((project, i) => (
-        <Link href={`/projects/${project.slug}`} key={`${project.slug}-${i}`}>
-          <Card project={project} />
-        </Link>
+        <motion.div
+          key={`${project.slug}-${i}`}
+          {...fadeUpAnimation}
+          transition={{ duration: 0.6, delay: i * 0.2 }}
+        >
+          <Link href={`/projects/${project.slug}`}>
+            <Card project={project} />
+          </Link>
+        </motion.div>
       ))}
     </section>
   )
