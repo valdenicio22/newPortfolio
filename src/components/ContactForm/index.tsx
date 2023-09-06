@@ -1,7 +1,9 @@
 'use client'
 
+import { fadeUpAnimation } from '@/lib/animation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios'
+import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { HiArrowNarrowRight } from 'react-icons/hi'
@@ -49,9 +51,11 @@ export function ContactForm() {
           className="items-center text-center"
         />
 
-        <form
+        <motion.form
           className="w-full flex flex-col gap-4 mt-12"
           onSubmit={handleSubmit(onSubmit)}
+          {...fadeUpAnimation}
+          transition={{ duration: 0.5 }}
         >
           <input
             className="w-full h-14 p-4 rounded-lg bg-gray-800 text-gray-50 placeholder:text-gray-400 focus:outline-none focus:ring-2 ring-emerald-600"
@@ -79,7 +83,7 @@ export function ContactForm() {
             Enviar mensagem
             <HiArrowNarrowRight size={18} />
           </Button>
-        </form>
+        </motion.form>
       </div>
     </section>
   )

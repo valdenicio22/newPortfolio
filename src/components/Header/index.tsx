@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NavItem } from './NavItem'
@@ -17,7 +18,12 @@ const NAV_ITEMS = [
 
 export function Header() {
   return (
-    <header className="flex items-center justify-center absolute top-0 z-10 w-full h-24">
+    <motion.header
+      className="flex items-center justify-center absolute top-0 z-10 w-full h-24"
+      initial={{ top: -100 }}
+      animate={{ top: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container flex items-center justify-between">
         <Link href="/">
           <Image
@@ -33,6 +39,6 @@ export function Header() {
           ))}
         </nav>
       </div>
-    </header>
+    </motion.header>
   )
 }
