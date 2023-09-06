@@ -7,8 +7,15 @@ import { IBM_Plex_Mono, Inter } from 'next/font/google'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'My personal portfolio'
+  title: {
+    default: 'Home',
+    template: '%s | VF Dev'
+  },
+  icons: [
+    {
+      url: '/next.svg'
+    }
+  ]
 }
 
 const inter = Inter({

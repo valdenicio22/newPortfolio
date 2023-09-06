@@ -2,6 +2,12 @@ import { Introduction } from '@/components/pages/projects/Introduction'
 import { List } from '@/components/pages/projects/List'
 import { ProjectsPageData } from '@/Types/home'
 import { fetchHygraphQuery } from '@/utils/fetchHygraphQuery'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Projects'
+}
+
 
 const getPageData = async (): Promise<ProjectsPageData> => {
   const query = `
