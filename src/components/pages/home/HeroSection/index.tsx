@@ -13,7 +13,6 @@ type HeroSectionProps = {
 }
 
 export function HeroSection({ homeInfo }: HeroSectionProps) {
-  console.log('homeInfo', homeInfo)
   const {
     introduction,
     knownTechs,
@@ -21,6 +20,7 @@ export function HeroSection({ homeInfo }: HeroSectionProps) {
     socialMedias,
     technologies
   } = homeInfo
+
   const handleContact = () => {
     const contactSection = document.querySelector('#contact')
     if (contactSection) {

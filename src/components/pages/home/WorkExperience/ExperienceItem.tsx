@@ -1,17 +1,62 @@
+import { WorkExperience } from '@/Types/workExperience'
+import { RichText } from '@/components/RichText'
 import { TechBadge } from '@/components/techBadge'
-import { technologies } from '@/constants'
+import { differenceInMonths, differenceInYears } from 'date-fns'
+import format from 'date-fns/format'
+import enUS from 'date-fns/locale/en-US'
 import Image from 'next/image'
 
-export function ExperienceItem() {
+type ExperienceItemProps = {
+  experience: WorkExperience
+}
+
+export function ExperienceItem({ experience }: ExperienceItemProps) {
+  const {
+    companyName,
+    companyLogo,
+    companyUrl,
+    description,
+    endDate,
+    role,
+    startDate,
+    technologies
+  } = experience
+
+  const dateStart = new Date(startDate)
+
+  const formattedStartDate = format(dateStart, 'MMM yyyy', {
+    locale: enUS
+  })
+  const formattedEndDate = endDate
+    ? format(new Date(endDate), 'MMM yyyy', { locale: enUS })
+    : 'Present'
+
+  const dateEnd = endDate ? new Date(endDate) : new Date()
+
+  const months = differenceInMonths(dateEnd, dateStart)
+  const years = differenceInYears(dateEnd, dateStart)
+  const monthsRemaining = months % 12
+
+  const formattedDuration =
+    years > 0
+      ? `${years} year${years > 1 ? 's' : ''} 
+        ${
+          monthsRemaining > 0
+            ? ` and ${monthsRemaining} month${monthsRemaining > 1 ? 's' : ''}`
+            : ``
+        }
+            `
+      : `${monthsRemaining} month${monthsRemaining > 1 ? 's' : ''}`
+
   return (
     <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
       <div className="flex flex-col items-center gap-4">
         <div className="rounded-full border border-gray-500 p-0.5">
           <Image
-            src={'/images/companies/ioasys.jpeg'}
+            src={companyLogo.url}
             width={40}
             height={40}
-            alt={'Ioasys Logo'}
+            alt={`${companyName} company logo`}
             className="rounded-full"
           />
         </div>
@@ -20,28 +65,29 @@ export function ExperienceItem() {
       <div>
         <div className="flex flex-col gap-2 text-sm sm:text-base">
           <a
-            href="https://www.linkedin.com/company/ioasys/"
+            href={companyUrl}
             target="_blank"
             className="text-gray-500 hover:text-emerald-500 transition-colors"
           >
-            @ Ioasys
+            @ {companyName}
           </a>
-          <h4 className="text-gray-300 font-medium">Desenvolvedor Front-end</h4>
+          <h4 className="text-gray-300 font-medium">{role}</h4>
           <span className="text-gray-500">
-            04-07-2022 • Momento • (10 meses)
+            {formattedStartDate} • {formattedEndDate} • ({formattedDuration})
           </span>
-          <p className="text-gray-400">
-            Desenvolvimento e manutenção de interfaces utilizando React, Next,
-            Tailwind, Typescript e Figma. Para o planejamento dos sprints, é
-            utilizado o Jira.
-          </p>
+          <div className="text-gray-400">
+            <RichText content={description.raw} />
+          </div>
         </div>
         <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
-          Competências
+          Technologies
         </p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
           {technologies.map((tech) => (
-            <TechBadge name={tech} key={`experience-@Ioasys-tech-${tech}`} />
+            <TechBadge
+              name={tech.name}
+              key={`experience-@Ioasys-tech-${tech}`}
+            />
           ))}
         </div>
       </div>

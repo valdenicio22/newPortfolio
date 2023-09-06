@@ -27,22 +27,38 @@ const getPageData = async (): Promise<HomePageData> => {
       socialMedias {
         url
         iconSvg
-      } 
+      }
       highLightProjects {
         slug
-        githubUrl
-        liveProjectUrl
-        title
-        shortDescription
         thumbnail {
           url
         }
+        title
+        shortDescription
         technologies {
           name
         }
         description {
           raw
         }
+        githubUrl
+        liveProjectUrl
+      }
+    }
+    workExperiences {
+      companyName
+      companyUrl
+      endDate
+      role
+      startDate
+      companyLogo {
+        url
+      }
+      description {
+        raw
+      }
+      technologies {
+        name
       }
     }
   }
@@ -55,16 +71,13 @@ const getPageData = async (): Promise<HomePageData> => {
 }
 
 export default async function Home() {
-  const { landingPage: data } = await getPageData()
-
-  console.log(data, data)
-
+  const { landingPage: data, workExperiences } = await getPageData()
   return (
     <>
       <HeroSection homeInfo={data} />
       <Experience techs={data.knownTechs} />
       <HighlightedProject projects={data.highLightProjects} />
-      <WorkExperience />
+      <WorkExperience experiences={workExperiences} />
     </>
   )
 }
