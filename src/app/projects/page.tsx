@@ -1,9 +1,9 @@
 import { Introduction } from '@/components/pages/projects/Introduction'
 import { List } from '@/components/pages/projects/List'
-import { ProjectPageData } from '@/Types/home'
+import { ProjectsPageData } from '@/Types/home'
 import { fetchHygraphQuery } from '@/utils/fetchHygraphQuery'
 
-const getPageData = async (): Promise<ProjectPageData> => {
+const getPageData = async (): Promise<ProjectsPageData> => {
   const query = `
     query ProjectsQuery {
       projects {

@@ -1,9 +1,9 @@
-import { ProjectPageData } from '@/Types/home'
+import { ProjectsPageData } from '@/Types/home'
 import Link from 'next/link'
 import { Card } from '../Card'
 
 type ListProps = {
-  projects: ProjectPageData['projects']
+  projects: ProjectsPageData['projects']
 }
 
 export function List({ projects }: ListProps) {

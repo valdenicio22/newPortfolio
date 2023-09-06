@@ -42,7 +42,7 @@ export function ProjectCard({ project }: ProjectProps) {
             />
           ))}
         </div>
-        <Link href={`'/projects/${slug}`}>
+        <Link href={`/projects/${slug}`}>
           Ver Projeto
           <HiArrowNarrowRight />
         </Link>

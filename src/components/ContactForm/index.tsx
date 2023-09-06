@@ -21,7 +21,7 @@ export function ContactForm() {
   })
 
   const onSubmit = (data: ContactFormData): void => {
-    console.log(data)
+    // console.log(data)
   }
 
   return (
