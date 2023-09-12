@@ -35,7 +35,7 @@ export function ProjectCard({ project }: ProjectProps) {
           width={420}
           height={304}
           alt={`Thumbnail of the project ${title}`}
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-full object-contain rounded-lg"
         />
       </motion.div>
       <div className="flex-1 lg:py-[18px]">

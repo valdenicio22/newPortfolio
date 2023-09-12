@@ -13,7 +13,7 @@ export function KnowledgeBox({ tech }: KnowlodgeBoxProps) {
     ''
   )
   return (
-    <div className="max-w-[264px] p-6 rounded-lg text-gray-500 flex flex-col gap-2 bg-gray-600/20 hover:text-emerald-500 hover:bg-gray-600/30 transition-all">
+    <div className="h-[104px] p-6 rounded-lg text-gray-500 flex flex-col gap-2 bg-gray-600/20 hover:text-emerald-500 hover:bg-gray-600/30 transition-all">
       <div className="flex items-center justify-between">
         <p className="font-medium">{name}</p>
         <CMSIcon icon={iconSvg} />

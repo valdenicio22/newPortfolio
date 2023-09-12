@@ -14,7 +14,7 @@ export function Experience({ techs }: ExperienceProps) {
       <SectionTitle section="Compotências" title="Conhecimentos" />
       <div
         className={
-          'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mt-[60px]'
+          'grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-[60px]'
         }
       >
         {techs?.map((tech, i) => (

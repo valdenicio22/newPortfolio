@@ -15,13 +15,7 @@ type HeroSectionProps = {
 }
 
 export function HeroSection({ homeInfo }: HeroSectionProps) {
-  const {
-    introduction,
-    knownTechs,
-    profilePicture,
-    socialMedias,
-    technologies
-  } = homeInfo
+  const { introduction, profilePicture, socialMedias, technologies } = homeInfo
 
   const handleContact = () => {
     const contactSection = document.querySelector('#contact')
@@ -43,27 +37,27 @@ export function HeroSection({ homeInfo }: HeroSectionProps) {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-emerald-400 font-mono">Olá meu nome é</p>
+          <p className="text-emerald-400 font-mono">Hi there! My name is</p>
           <h2 className="text-4xl font-medium mt-2">Valdenício Ferreira</h2>
 
-          <div className="text-gray-400 my-6 text-sm sm:text-base">
+          <div className="text-gray-400 my-6 text-sm sm:text-base text-justify">
             <RichText content={introduction.raw} />
           </div>
 
-          <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+          <div className="flex flex-wrap gap-x-2 gap-y-3">
             {technologies.map((tech, i) => (
               <TechBadge
                 key={`${tech.name}-${i}`}
                 name={tech.name}
                 {...techBadgeAnimation}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+                transition={{ duration: 0.3, delay: i * 0.1 }}
               />
             ))}
           </div>
 
           <div className="mt-6 lg:mt-10 flex items-center gap-4">
             <Button className="w-max shadow-button" onClick={handleContact}>
-              Entre em contato
+              Get in touch
               <HiArrowNarrowRight size={18} />
             </Button>
             <div className="h-20 flex items-center gap-3 text-2xl text-gray-600 ">
@@ -93,7 +87,7 @@ export function HeroSection({ homeInfo }: HeroSectionProps) {
             width={420}
             height={404}
             alt="My profile picture"
-            className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
+            className="w-[300px] h-[300px] mb-6 shadow-2xl rounded-lg object-cover lg:w-[420px] lg:h-[404px] lg:mb-0 "
           />
         </motion.div>
       </div>
