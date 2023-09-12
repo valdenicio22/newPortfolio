@@ -2,6 +2,7 @@ import { BackToTop } from '@/components/BackToTop'
 import { ContactForm } from '@/components/ContactForm'
 import { Footer } from '@/components/Foorter'
 import { Toaster } from '@/components/Toaster'
+import { Header } from '@/components/header'
 import type { Metadata } from 'next'
 import { IBM_Plex_Mono, Inter } from 'next/font/google'
 import './globals.css'
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Toaster />
         <BackToTop />
 
+        <Header />
         {children}
         <ContactForm />
         <Footer />
