@@ -74,21 +74,21 @@ export async function generateStaticParams() {
   return projects
 }
 
-export async function generateMetadata({
-  params: { slug }
-}: ProjectProps): Promise<Metadata> {
-  const { project } = await getProjectDetailsData(slug)
-  return {
-    title: project.title,
-    description: project.description.text,
-    openGraph: {
-      images: [
-        {
-          url: project.thumbnail.url,
-          width: 1200,
-          height: 630
-        }
-      ]
-    }
-  }
-}
+// export async function generateMetadata({
+//   params: { slug }
+// }: ProjectProps): Promise<Metadata> {
+//   const { project } = await getProjectDetailsData(slug)
+//   return {
+//     title: project.title,
+//     description: project.description.text,
+//     openGraph: {
+//       images: [
+//         {
+//           url: project.thumbnail.url,
+//           width: 1200,
+//           height: 630
+//         }
+//       ]
+//     }
+//   }
+// }

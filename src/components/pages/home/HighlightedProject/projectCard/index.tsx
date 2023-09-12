@@ -1,7 +1,6 @@
 'use client'
 
 import { Project } from '@/Types/projects'
-import { RichText } from '@/components/RichText'
 import { fadeUpAnimation, techBadgeAnimation } from '@/lib/animation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -14,7 +13,6 @@ interface ProjectProps {
 }
 
 export function ProjectCard({ project }: ProjectProps) {
-  const { title, technologies, thumbnail, shortDescription, slug } = project
   return (
     <motion.div
       className="flex flex-col items-center gap-6 lg:gap-12 lg:flex-row"
@@ -31,10 +29,10 @@ export function ProjectCard({ project }: ProjectProps) {
         transition={{ duration: 0.3, delay: 0.1 }}
       >
         <Image
-          src={thumbnail.url}
+          src={project.thumbnail.url}
           width={420}
           height={304}
-          alt={`Thumbnail of the project ${title}`}
+          alt={`Thumbnail of the project ${project.title}`}
           className="w-full h-full object-contain rounded-lg"
         />
       </motion.div>
@@ -51,7 +49,7 @@ export function ProjectCard({ project }: ProjectProps) {
             src="/images/icons/project-title-icon.svg"
           />
 
-          {title}
+          {project.title}
         </motion.h3>
 
         <motion.p
@@ -59,11 +57,11 @@ export function ProjectCard({ project }: ProjectProps) {
           {...fadeUpAnimation}
           transition={{ duration: 0.2, delay: 0.3 }}
         >
-          {shortDescription}
+          {project.shortDescription}
         </motion.p>
 
         <div className="flex flex-wrap items-center gap-2 mb-8">
-          {technologies.map((tech, i) => (
+          {project?.technologies.map((tech, i) => (
             <TechBadge
               name={tech.name}
               key={`${project.title}-tech-${tech.name}`}
@@ -72,7 +70,7 @@ export function ProjectCard({ project }: ProjectProps) {
             />
           ))}
         </div>
-        <Link href={`/projects/${slug}`}>
+        <Link href={`/projects/${project.slug}`}>
           Ver Projeto
           <HiArrowNarrowRight />
         </Link>

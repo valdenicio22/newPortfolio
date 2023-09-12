@@ -15,8 +15,6 @@ type HeroSectionProps = {
 }
 
 export function HeroSection({ homeInfo }: HeroSectionProps) {
-  const { introduction, profilePicture, socialMedias, technologies } = homeInfo
-
   const handleContact = () => {
     const contactSection = document.querySelector('#contact')
     if (contactSection) {
@@ -41,11 +39,11 @@ export function HeroSection({ homeInfo }: HeroSectionProps) {
           <h2 className="text-4xl font-medium mt-2">Valdenício Ferreira</h2>
 
           <div className="text-gray-400 my-6 text-sm sm:text-base text-justify">
-            <RichText content={introduction.raw} />
+            <RichText content={homeInfo.introduction.raw} />
           </div>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3">
-            {technologies.map((tech, i) => (
+            {homeInfo?.technologies.map((tech, i) => (
               <TechBadge
                 key={`${tech.name}-${i}`}
                 name={tech.name}
@@ -61,7 +59,7 @@ export function HeroSection({ homeInfo }: HeroSectionProps) {
               <HiArrowNarrowRight size={18} />
             </Button>
             <div className="h-20 flex items-center gap-3 text-2xl text-gray-600 ">
-              {socialMedias.map((social, i) => (
+              {homeInfo?.socialMedias.map((social, i) => (
                 <a
                   href={social.url}
                   key={`${social.url}-${i}`}
@@ -83,7 +81,7 @@ export function HeroSection({ homeInfo }: HeroSectionProps) {
           className="origin-center"
         >
           <Image
-            src={profilePicture.url}
+            src={homeInfo?.profilePicture.url}
             width={420}
             height={404}
             alt="My profile picture"

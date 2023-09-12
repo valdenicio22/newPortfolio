@@ -93,7 +93,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           {technologies.map((tech, i) => (
             <TechBadge
               name={tech.name}
-              key={`experience-@Ioasys-tech-${tech}`}
+              key={`${tech.name}-tech-${i}`}
               {...techBadgeAnimation}
               transition={{ duration: 0.2, delay: i * 0.2 }}
             />

@@ -72,6 +72,7 @@ const getPageData = async (): Promise<HomePageData> => {
 
 export default async function Home() {
   const { landingPage: data, workExperiences } = await getPageData()
+  
   return (
     <>
       <HeroSection homeInfo={data} />
