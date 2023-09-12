@@ -10,11 +10,9 @@ export function WorkExperience({ experiences }: WorkExperienceProps) {
   return (
     <section className="container py-16 flex flex-col gap-10 md:flex-row md:gap-4 lg:gap-16 ">
       <div className="max-w-[420px]">
-        <SectionTitle section="experiência" title="Experiência Profissional" />
+        <SectionTitle section="Experience" title="Professional Experience" />
         <p className="text-gray-400 mt-6">
-          Estou sempre disponivel a novos desafios e projetos emocionantes.
-          Vamos trabalhar juntos para criar a solução melhor para o nosso
-          client.
+          {`I'm excited to explore new opportunities and collaborate on projects that deliver excellent results for our clients.`}
         </p>
       </div>
       <div className="flex flex-col gap-4">

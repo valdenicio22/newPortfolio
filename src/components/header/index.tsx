@@ -33,7 +33,7 @@ export function Header() {
             alt="Placeholder Logo"
           />
         </Link>
-        <nav className="flex items-center gap-4 sm:gap-10">
+        <nav className="flex items-center gap-4 sm:gap-8">
           {NAV_ITEMS.map((item) => (
             <NavItem key={item.label} {...item} />
           ))}

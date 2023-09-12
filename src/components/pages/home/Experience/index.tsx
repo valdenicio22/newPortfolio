@@ -11,7 +11,7 @@ type ExperienceProps = {
 export function Experience({ techs }: ExperienceProps) {
   return (
     <section className="container py-16">
-      <SectionTitle section="Compotências" title="Conhecimentos" />
+      <SectionTitle section="Skills" title="Knowledge" />
       <div
         className={
           'grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-[60px]'

@@ -45,11 +45,13 @@ export function ContactForm() {
       className="py-16 px-6 md:py-32 flex items-center justify-center bg-gray-950 "
     >
       <div className="w-full max-w-[420px] mx-auto ">
-        <SectionTitle
-          section="Contato"
-          title="Vamos trabalhar juntos? Entre em contato"
-          className="items-center text-center"
-        />
+        <div className="w-full flex items-center justify-center">
+          <SectionTitle
+            section="Contact"
+            title="Let's work together? Get in touch."
+            className="items-center text-center max-w-[300px]"
+          />
+        </div>
 
         <motion.form
           className="w-full flex flex-col gap-4 mt-12"
@@ -80,7 +82,7 @@ export function ContactForm() {
             className="w-max mx-auto mt-6 shadow-button"
             disabled={isSubmitting}
           >
-            Enviar mensagem
+            Send a message
             <HiArrowNarrowRight size={18} />
           </Button>
         </motion.form>

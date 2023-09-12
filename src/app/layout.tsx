@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   icons: [
     {
-      url: '/next.svg'
+      url: '/favicon.ico'
     }
   ]
 }

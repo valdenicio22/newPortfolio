@@ -15,14 +15,14 @@ export function Introduction() {
       <motion.div
         className="flex flex-col items-center"
         initial={{ opacity: 0, y: 100 }}
-        whileInView={{opacity: 1, y: 0}}
-        exit={{opacity: 0, y: 100}}
-        transition={{duration: 0.6}}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.6 }}
       >
         <p className="max-w-[640px] my-6 text-sm text-gray-400 text-center sm:text-base">
-          Aqui você poderá ver alguns dos trabalhos que eu desenvolvi. Navegue à
-          vontade e explore os projetos para ver como foram criados, as
-          tecnologias utilizadas e as funcionalidades implementadas.
+          {` Feel free to explore the projects I've worked on. You can see how they
+          were created, what technologies were used, and the features that were
+          implemented.`}
         </p>
         <Link href="/">
           <HiArrowNarrowLeft size={20} />

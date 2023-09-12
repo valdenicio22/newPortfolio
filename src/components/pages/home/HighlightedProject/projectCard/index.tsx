@@ -45,7 +45,7 @@ export function ProjectCard({ project }: ProjectProps) {
           <Image
             width={20}
             height={20}
-            alt=""
+            alt={project.title}
             src="/images/icons/project-title-icon.svg"
           />
 
@@ -71,7 +71,7 @@ export function ProjectCard({ project }: ProjectProps) {
           ))}
         </div>
         <Link href={`/projects/${project.slug}`}>
-          Ver Projeto
+          View Project
           <HiArrowNarrowRight />
         </Link>
       </div>

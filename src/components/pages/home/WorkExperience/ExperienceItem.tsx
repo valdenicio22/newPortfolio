@@ -86,18 +86,21 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             <RichText content={description.raw} />
           </div>
         </div>
-        <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
-          Technologies
-        </p>
+        {!!technologies.length && (
+          <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
+            Technologies
+          </p>
+        )}
         <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
-          {technologies.map((tech, i) => (
-            <TechBadge
-              name={tech.name}
-              key={`${tech.name}-tech-${i}`}
-              {...techBadgeAnimation}
-              transition={{ duration: 0.2, delay: i * 0.2 }}
-            />
-          ))}
+          {!!technologies.length &&
+            technologies.map((tech, i) => (
+              <TechBadge
+                name={tech.name}
+                key={`${tech.name}-tech-${i}`}
+                {...techBadgeAnimation}
+                transition={{ duration: 0.2, delay: i * 0.2 }}
+              />
+            ))}
         </div>
       </div>
     </motion.div>
