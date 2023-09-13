@@ -91,7 +91,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             Technologies
           </p>
         )}
-        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
+        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[420px] mb-8">
           {!!technologies.length &&
             technologies.map((tech, i) => (
               <TechBadge
