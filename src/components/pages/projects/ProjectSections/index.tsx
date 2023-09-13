@@ -22,14 +22,15 @@ export function ProjectSections({ sections }: ProjectSections) {
           <h2 className="text-2xl font-medium text-gray-300 md:text-3xl">
             {section.title}
           </h2>
-          <Image
-            src={section.image.url}
-            width={1080}
-            height={672}
-            className="w-full aspect-auto object-cover rounded-lg"
-            alt={`imagem da sessão ${section.title}`}
-            unoptimized
-          />
+          <div className="max-w-[1080px] max-h-[710px]">
+            <Image
+              src={section.image.url}
+              width={1080}
+              height={710}
+              className="w-full aspect-auto object-cover rounded-lg"
+              alt={`section image of the ${section.title}`}
+            />
+          </div>
         </motion.div>
       ))}
     </section>

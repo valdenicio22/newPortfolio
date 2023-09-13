@@ -19,11 +19,13 @@ export function RichText({ ...props }: RichTextProps) {
         a: ({ children, ...props }) => (
           <a
             className="hover:text-emerald-500 underline transition-colors"
+            target="_blank"
             {...props}
           >
             {children}
           </a>
-        )
+        ),
+        p: ({ children }) => <p className="mt-2">{children}</p>
       }}
     />
   )

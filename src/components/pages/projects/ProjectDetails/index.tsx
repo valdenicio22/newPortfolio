@@ -2,11 +2,11 @@
 
 import { Button } from '@/components/Button'
 import { Link } from '@/components/Link'
+import { RichText } from '@/components/RichText'
 import { SectionTitle } from '@/components/SectionTitle'
 import { TechBadge } from '@/components/TechBadge'
 import { fadeUpAnimation, techBadgeAnimation } from '@/lib/animation'
 import { Project } from '@/types/projects'
-import { RichText } from '@graphcms/rich-text-react-renderer'
 import { motion } from 'framer-motion'
 import { FiGlobe } from 'react-icons/fi'
 import { HiArrowNarrowLeft } from 'react-icons/hi'
@@ -42,12 +42,12 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
         className="text-center items-center sm:[&>h3]:text-4xl"
       />
       <motion.div
-        className="text-gray-400 text-center max-w-[640px] my-4 text-sm sm:my-6 sm:text-base"
+        className="text-gray-400 max-w-[640px] my-4 text-sm sm:my-6 sm:text-base"
         {...fadeUpAnimation}
       >
         <RichText content={description.raw} />
       </motion.div>
-      <div className="w-full max-w-[330px] flex flex-wrap items-center justify-center gap-2">
+      <div className="w-full max-w-[450px] flex flex-wrap items-center justify-center gap-2">
         {technologies.map((tech, i) => (
           <TechBadge
             name={tech.name}

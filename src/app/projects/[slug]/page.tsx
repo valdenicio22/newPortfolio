@@ -4,6 +4,7 @@ import { ProjectPageData, ProjectsPageStaticData } from '@/types/pageInfo'
 import { Project } from '@/types/projects'
 import { fetchHygraphQuery } from '@/utils/fetchHygraphQuery'
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 type ProjectProps = {
   params: {
@@ -53,6 +54,8 @@ const getProjectDetailsData = async (
 
 export default async function Project({ params: { slug } }: ProjectProps) {
   const { project } = await getProjectDetailsData(slug)
+
+  if (!project?.title) return notFound()
 
   return (
     <>
