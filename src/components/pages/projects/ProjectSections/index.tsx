@@ -1,7 +1,7 @@
 'use client'
 
-import { Project } from '@/Types/projects'
 import { fadeUpAnimation } from '@/lib/animation'
+import { Project } from '@/types/projects'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 

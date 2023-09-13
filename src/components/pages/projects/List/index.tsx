@@ -1,6 +1,6 @@
 'use client'
-import { ProjectsPageData } from '@/Types/home'
 import { fadeUpAnimation } from '@/lib/animation'
+import { ProjectsPageData } from '@/types/pageInfo'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Card } from '../Card'

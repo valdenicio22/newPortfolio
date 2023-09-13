@@ -1,5 +1,5 @@
-import { WorkExperience as IWorkExperience } from '@/Types/workExperience'
 import { SectionTitle } from '@/components/SectionTitle'
+import { WorkExperience as IWorkExperience } from '@/types/workExperience'
 import { ExperienceItem } from './ExperienceItem'
 
 type WorkExperienceProps = {

@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 import { TbArrowNarrowUp } from 'react-icons/tb'
-import { Button } from '../button'
+import { Button } from '../Button'
 
 export function BackToTop() {
   const [show, setShow] = useState(false)

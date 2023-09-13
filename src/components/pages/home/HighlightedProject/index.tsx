@@ -1,8 +1,8 @@
-import { Project } from '@/Types/projects'
+import { HorizontalDividir } from '@/components/HorizontalDividir'
 import { Link } from '@/components/Link'
 import { SectionTitle } from '@/components/SectionTitle'
-import { HorizontalDividir } from '@/components/horizontalDividir'
-import { ProjectCard } from '@/components/pages/home/HighlightedProject/projectCard'
+import { ProjectCard } from '@/components/pages/home/HighlightedProject/ProjectCard'
+import { Project } from '@/types/projects'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 
 type HighlightedProjectProps = {

@@ -1,7 +1,7 @@
-import { ProjectPageData, ProjectsPageStaticData } from '@/Types/home'
-import { Project } from '@/Types/projects'
 import { ProjectDetails } from '@/components/pages/projects/ProjectDetails'
 import { ProjectSections } from '@/components/pages/projects/ProjectSections'
+import { ProjectPageData, ProjectsPageStaticData } from '@/types/pageInfo'
+import { Project } from '@/types/projects'
 import { fetchHygraphQuery } from '@/utils/fetchHygraphQuery'
 import { Metadata } from 'next'
 

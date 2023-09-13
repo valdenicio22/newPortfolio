@@ -1,7 +1,7 @@
 'use client'
-import { KnownTech } from '@/Types/projects'
 import { SectionTitle } from '@/components/SectionTitle'
-import { KnowledgeBox } from '@/components/pages/home/Experience/knowledgeBox'
+import { KnowledgeBox } from '@/components/pages/home/Experience/KnowledgeBox'
+import { KnownTech } from '@/types/projects'
 import { motion } from 'framer-motion'
 
 type ExperienceProps = {

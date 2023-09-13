@@ -9,7 +9,7 @@ import { toast } from 'react-hot-toast'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { z } from 'zod'
 import { SectionTitle } from '../SectionTitle'
-import { Button } from '../button'
+import { Button } from '../Button'
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),

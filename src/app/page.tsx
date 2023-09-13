@@ -1,8 +1,8 @@
 import { Experience } from '@/components/pages/home/Experience'
 
-import { HomePageData } from '@/Types/home'
 import { HighlightedProject } from '@/components/pages/home/HighlightedProject'
 import { WorkExperience } from '@/components/pages/home/WorkExperience'
+import { HomePageData } from '@/types/pageInfo'
 import { fetchHygraphQuery } from '@/utils/fetchHygraphQuery'
 import { HeroSection } from '../components/pages/home/HeroSection'
 
@@ -72,7 +72,7 @@ const getPageData = async (): Promise<HomePageData> => {
 
 export default async function Home() {
   const { landingPage: data, workExperiences } = await getPageData()
-  
+
   return (
     <>
       <HeroSection homeInfo={data} />
